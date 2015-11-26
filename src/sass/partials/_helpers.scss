@@ -1,0 +1,288 @@
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+
+/* Layout oriented helpers
+   ========================================================================== */
+%helper--sec {
+    display: flex;
+
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    @extend %helper--flex--center--top;
+}
+
+%helper--inner {
+    width: $size_inner;
+}
+%helper--inner {
+    @include breakpoint($breakpoint_desktop-medium) {
+        width: 100%;
+        padding-right: $size_padding_big;
+        padding-left: $size_padding_big;
+    }
+    @include breakpoint($breakpoint_desktop-small) {
+        padding-right: calc(#{$size_padding} * 2);
+        padding-left: calc(#{$size_padding} * 2);
+    }
+    @include breakpoint($breakpoint_smartphone) {
+        padding-right: $size_padding_small;
+        padding-left: $size_padding_small;
+    }
+}
+
+/* Content helpers
+   ========================================================================== */
+%helper--clear {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    overflow: hidden;
+
+    height: 0;
+    margin: 0!important;
+
+    line-height: 0;
+
+    content: '.';
+}
+%helper--clear:after {
+    display: block;
+    clear: both;
+
+    margin: 0!important;
+
+    content: '.';
+}
+%helper--clearfix:before,
+%helper--clearfix:after {
+    display: block;
+    visibility: hidden;
+
+    height: 0;
+
+    content: '\0020';
+}
+%helper--clearfix:after {
+    clear: both;
+}
+%helper--reset--btn {
+    border: none;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+%helper--indent {
+    display: block;
+
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+
+    text-indent: -99998em;
+}
+%helper--transition {
+    transition: 170ms ease;
+}
+%helper--absolute--center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+}
+%helper--after {
+    display: block;
+
+    content: '';
+}
+%helper--after--absolute {
+    position: absolute;
+
+    @extend %helper--after;
+}
+%helper--after--absolute--center {
+    @extend %helper--after;
+    @extend %helper--absolute--center;
+}
+%helper--link--hover {
+    text-decoration: none;
+}
+%helper--hover--rgba {
+    position: relative;
+    &:after {
+        transition: 170ms;
+
+        background: rgba(0,0,0,0);
+
+        @extend %helper--after--absolute--center;
+    }
+    &:hover {
+        &:after {
+            background: rgba(0,0,0,.4);
+        }
+    }
+}
+%helper--flex {
+    display: flex;
+}
+%helper--fl--v-top {
+    align-items: flex-start;
+    align-content: flex-start;
+}
+%helper--fl--v-center {
+    align-items: center;
+    align-content: center;
+}
+%helper--fl--v-bottom {
+    align-items: flex-end;
+    align-content: flex-end;
+}
+%helper--fl--v-space-between {
+    align-items: flex-start;
+    align-content: space-between;
+}
+%helper--fl--h-left {
+    justify-content: flex-start;
+}
+%helper--fl--h-center {
+    justify-content: center;
+}
+%helper--fl--h-right {
+    justify-content: flex-end;
+}
+%helper--fl--h-space-between {
+    justify-content: space-between;
+}
+%helper--flex--center--top {
+    @extend %helper--flex;
+    @extend %helper--fl--h-center;
+    @extend %helper--fl--v-top;
+}
+%helper--flex--center--center {
+    @extend %helper--flex;
+    @extend %helper--fl--h-center;
+    @extend %helper--fl--v-center;
+}
+%helper--flex--center--bottom {
+    @extend %helper--flex;
+    @extend %helper--fl--h-center;
+    @extend %helper--fl--v-bottom;
+}
+%helper--flex--center--space-between {
+    @extend %helper--flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: space-between;
+    @extend %helper--fl--h-center;
+}
+%helper--flex--space-between--top {
+    @extend %helper--flex;
+    @extend %helper--fl--h-space-between;
+    @extend %helper--fl--v-top;
+}
+%helper--flex--space-between--center {
+    @extend %helper--flex;
+    @extend %helper--fl--h-space-between;
+    @extend %helper--fl--v-center;
+}
+%helper--flex--space-between--bottom {
+    @extend %helper--flex;
+    @extend %helper--fl--h-space-between;
+    @extend %helper--fl--v-bottom;
+}
+%helper--flex--left--top {
+    @extend %helper--flex;
+    @extend %helper--fl--v-top;
+}
+%helper--flex--left--center {
+    @extend %helper--flex;
+    @extend %helper--fl--v-center;
+}
+%helper--flex--left--bottom {
+    @extend %helper--flex;
+    @extend %helper--fl--v-bottom;
+}
+%helper--flex--right--top {
+    @extend %helper--flex;
+    @extend %helper--fl--h-right;
+    @extend %helper--fl--v-top;
+}
+%helper--flex--right--center {
+    @extend %helper--flex;
+    @extend %helper--fl--h-right;
+    @extend %helper--fl--v-center;
+}
+%helper--flex--right--bottom {
+    @extend %helper--flex;
+    @extend %helper--fl--h-right;
+    @extend %helper--fl--v-bottom;
+}
+%helper--flex--stretch {
+    @extend %helper--flex;
+    align-content: stretch;
+    align-items: stretch;
+}
+%helper--flex--vertical-space-between {
+    @extend %helper--flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: space-between;
+}
+%helper--list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+%helper--list--flex {
+    display: flex;
+
+    @extend %helper--list;
+}
+
+
+/* Apparence helpers
+   ========================================================================== */
+
+%helper--btn--default {
+    height: $size_btn-default_v;
+    padding: 0 $size_padding_big;
+
+    border-radius: 2px;
+    background: linear-gradient(to bottom, #e32c49 0%,#d4213e 100%);
+
+    @extend %helper--flex--center--center;
+    @extend %helper--transition;
+    .label {
+        padding-top: 2px;
+
+        font-size: 18px;
+        font-weight: 600;
+
+        text-transform: uppercase;
+
+        color: $color_white;
+    }
+    &:hover {
+        background: linear-gradient(to bottom, #363636 0%,#121212 100%);
+    }
+}
+%helper--btn--default {
+    @include breakpoint($breakpoint_smartphone) {
+        width: 100%;
+        .label {
+            padding-top: 1px;
+
+            font-size: 16px;
+        }
+    }
+}
+
+[ng-click] {
+    cursor: pointer;
+}
