@@ -1,21 +1,23 @@
 app.controller('detailsViewCtrl',[
     '$scope',
+    '$rootScope',
     '$window',
     'ChecklistsFct',
     '$state',
     '$stateParams',
-    function ($scope, $window, ChecklistsFct, $state, $stateParams) {
-        $scope.allChecklists = undefined;
-        $scope.currentChecklist = undefined;
+    function ($scope, $rootScope, $window, ChecklistsFct, $state, $stateParams) {
+        $scope.allChecklists = {};
+        $scope.currentChecklist = {};
+        $scope.localStorageNamespace = 'pagepro_checklists_';
 
 
         $scope.changeTriggered = function DVC_changeTriggered () {
-            $window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id] = JSON.stringify($scope.checkboxList);
+            $window.localStorage[$scope.localStorageNamespace + $scope.currentChecklist.id] = JSON.stringify($scope.checkboxList);
         }
 
         $scope.resetCheckboxes = function DVC_resetCheckboxes () {
             $scope.checkboxList = {};
-            $window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id] = JSON.stringify({});
+            $window.localStorage[$scope.localStorageNamespace + $scope.currentChecklist.id] = JSON.stringify({});
         }
 
         $scope.setCurrentChecklist = function DVC_setCurrentChecklist () {
@@ -25,14 +27,17 @@ app.controller('detailsViewCtrl',[
                     return;
                 }
             });
-            if (!$scope.currentChecklist) {
+            if (!Object.keys($scope.currentChecklist).length) {
                 $state.go('errorState');
             }
-            if(!$window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id]) {
-                $window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id] = JSON.stringify({});
+            if(!$window.localStorage[$scope.localStorageNamespace + $scope.currentChecklist.id]) {
+                $window.localStorage[$scope.localStorageNamespace + $scope.currentChecklist.id] = JSON.stringify({});
             }
 
             $scope.checkboxList = JSON.parse($window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id] || {});
+
+            // setting up new page title
+            $rootScope.title = $scope.currentChecklist.name;
         }
 
         ChecklistsFct.getChecklistJson().then(function (data) {
