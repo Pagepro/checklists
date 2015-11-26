@@ -1,0 +1,211 @@
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+.form {
+    fieldset {
+        margin: 0;
+        padding: 0;
+
+        border: 0;
+    }
+    input,
+    textarea {
+        &:focus {
+            outline: none;
+        }
+    }
+    *::-ms-clear {
+        display: none;
+    }
+}
+/* Custom checkboxes
+   ========================================================================== */
+.icheckbox {
+    width: $size_checkbox;
+    height: $size_checkbox;
+
+    cursor: pointer;
+
+    border: 1px solid $color_grey_2;
+    border-radius: 2px;
+    background: $color_white;
+
+    @extend %helper--transition;
+    &:before {
+        width: 100%;
+        height: 100%;
+
+        font-family: $font_ico;
+        font-size: 14px;
+
+        content: '\e800';
+
+        opacity: 0;
+        color: $color_red_dark;
+
+        @extend %helper--transition;
+        @extend %helper--absolute--center;
+        @extend %helper--flex--center--center;
+    }
+    &.checked {
+        position: relative;
+
+        border-color: $color_red_dark;
+        background: linear-gradient(to bottom, #e32c49 0%,#d4213e 100%);
+        &:before {
+            opacity: 1;
+            color: $color_white;
+        }
+    }
+}
+.icheckbox {
+    @include breakpoint($breakpoint_desktop-small) {
+        width: $size_checkbox_small;
+        height: $size_checkbox_small;
+        &:before {
+            font-size: 10px;
+        }
+    }
+    @include breakpoint($breakpoint_smartphone) {
+        width: $size_checkbox_mini;
+        height: $size_checkbox_mini;
+    }
+}
+
+/* form--checklist
+   ========================================================================== */
+.form--checklist {
+    .form {
+        &__content,
+        &__actions {
+            flex-wrap: wrap;
+            @extend %helper--flex--right--top;
+            .btn--back {
+                margin-right: auto;
+            }
+        }
+        &__content {
+            .checklist-box {
+                width: 100%;
+            }
+        }
+    }
+    .form__content + .form__actions {
+        margin-top: calc(#{$size_padding} * 14);
+    }
+    .field {
+        @extend %helper--flex--left--top;
+        &__box {
+            &--checkbox {
+                width: calc(#{$size_checkbox} + #{$size_padding_big});
+                margin-top: 7px;
+
+                flex-shrink: 0;
+                @extend %helper--flex--left--top;
+            }
+        }
+        .input {
+            opacity: 0;
+            position: absolute;
+            &--checkbox {
+                width: $size_checkbox;
+                height: $size_checkbox;
+            }
+        }
+        .label,
+        a,
+        p,
+        span {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.7;
+
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .label {
+            position: relative;
+            display: block;
+        }
+        .checkboxHolder {
+            position: absolute !important;
+            @extend .icheckbox;
+        }
+        a {
+            color: $color_red_dark;
+        }
+        p {
+            margin: 0;
+        }
+    }
+}
+.form--checklist {
+    @include breakpoint($breakpoint_desktop-small) {
+        .form__content + .form__actions {
+            margin-top: calc(#{$size_padding} * 10);
+        }
+        .field {
+            &__box {
+                &--checkbox {
+                    width: calc(#{$size_checkbox_small} + #{$size_padding} * 2);
+                    margin-top: 6px;
+                }
+            }
+            .input {
+                &--checkbox {
+                    width: $size_checkbox_small;
+                    height: $size_checkbox_small;
+                }
+            }
+            .label,
+            a,
+            p,
+            span {
+                font-size: 16px;
+            }
+        }
+    }
+    @include breakpoint($breakpoint_tablet) {
+        .form__content + .form__actions {
+            margin-top: calc(#{$size_padding} * 8);
+        }
+        .field {
+            .label,
+            a,
+            p,
+            span {
+                font-size: 15px;
+            }
+        }
+    }
+    @include breakpoint($breakpoint_tablet-small) {
+        .form__content + .form__actions {
+            margin-top: calc(#{$size_padding} * 6);
+        }
+    }
+    @include breakpoint($breakpoint_smartphone) {
+        .form__content + .form__actions {
+            margin-top: calc(#{$size_padding} * 3);
+        }
+        .field {
+            &__box {
+                &--checkbox {
+                    width: calc(#{$size_checkbox_mini} + #{$size_padding_small});
+                    margin-top: 5px;
+                }
+            }
+            .input {
+                &--checkbox {
+                    width: $size_checkbox_mini;
+                    height: $size_checkbox_mini;
+                }
+            }
+            .label,
+            a,
+            p,
+            span {
+                font-size: 13px;
+            }
+        }
+    }
+}

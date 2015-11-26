@@ -1,0 +1,28 @@
+{
+  "name": "PageproChecklist",
+  "version": "1.0.0",
+  "description": "Pagepro Checklist",
+  "author": "Pagepro <pagepro@pagepro.pl>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Pagepro/checklists.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "breakpoint-sass": "^2.6.1",
+    "browser-sync": "^2.7.13",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-eslint": "^0.15.0",
+    "gulp-htmllint": "0.0.5",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rev": "latest",
+    "gulp-run": "^1.6.11",
+    "gulp-sass": "^2.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uncache": "^0.4.0-beta1",
+    "gulp.spritesmith": "^3.8.2",
+    "jquery": "1.11.2",
+    "phantomjssmith": "^1.0.0"
+  }
+}

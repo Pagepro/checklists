@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/* Base
+   ========================================================================== */
+body {
+    width: 100%;
+    min-width: 320px;
+
+    font-family: $font_normal;
+    font-size: 16px;
+    line-height: 1.4;
+
+    color: $color_default;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    flex-wrap: wrap;
+    @extend %helper--flex--center--top;
+}
+
+body {
+    @include breakpoint($breakpoint_desktop-small) {
+        font-size: 14px;
+    }
+    @include breakpoint($breakpoint_smartphone) {
+        font-size: 12px;
+    }
+}
+
+/* Global Typography
+   ========================================================================== */
+
+a {
+    text-decoration: none;
+
+    color: $color_default;
+    &:hover {
+        text-decoration: underline;
+    }
+}

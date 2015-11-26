@@ -1,0 +1,8 @@
+<ul>
+    <li ng-repeat="list in allChecklists">
+        <a ui-sref="detailsState({id: list.id})">
+            <span>{{$index+1}}</span>
+            <span>{{list.name}}</span>
+        </a>
+    </li>
+</ul>

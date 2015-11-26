@@ -1,0 +1,163 @@
+/* ==========================================================================
+   Layouts
+   ========================================================================== */
+.sec--head,
+.sec--main,
+.sec--foot {
+    @extend %helper--sec;
+    &__inner {
+        @extend %helper--inner;
+    }
+}
+
+.sec--head {
+    height: 100vh;
+
+    background-image: url(../img/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    .minor-title {
+        color: $color_white;
+    }
+    &__inner {
+        height: 100%;
+        padding-top: 15vh;
+        padding-bottom: 15vh;
+
+        justify-content: center;
+        flex-wrap: wrap;
+        @extend %helper--flex--vertical-space-between;
+    }
+    &__content,
+    &__actions {
+        width: 100%;
+
+        @extend %helper--flex--center--center;
+    }
+    &__content {
+        height: calc(100% - 124px);
+
+        flex-wrap: wrap;
+        &__box {
+            width: 100%;
+
+            @extend %helper--flex--center--center;
+        }
+        &__box + &__box {
+            margin-top: calc(#{$size_padding} * 2);
+        }
+    }
+    &__actions {
+        .trigger-page-down {
+            min-width: 40%;
+        }
+    }
+    &__content + &__actions {
+        padding-top: calc(#{$size_padding} * 3);
+    }
+}
+
+.sec--head {
+    @include breakpoint($breakpoint_tablet) {
+        &__actions {
+            .trigger-page-down {
+                min-width: 100%;
+            }
+        }
+    }
+    @include breakpoint($breakpoint_smartphone) {
+        &__content {
+            height: calc(100% - 90px);
+            &__box + &__box {
+                margin-top: calc(#{$size_padding_small} * 2);
+            }
+        }
+        &__content + &__actions {
+            padding-top: calc(#{$size_padding_small} * 3);
+        }
+    }
+}
+
+.sec--main {
+    &__inner {
+        padding-top: calc(4 * #{$size_padding});
+        padding-bottom: calc(4 * #{$size_padding});
+    }
+    &__head + &__content {
+        margin-top: calc(#{$size_padding} * 4);
+    }
+    .tip {
+        width: 100%;
+    }
+    .checklist-box + .tip,
+    .tip + .tip {
+        margin-top: $size_padding_big;
+    }
+    .tip + .checklist-box {
+        margin-top: calc(#{$size_padding_big} * 2);
+    }
+    .checklist-box + .checklist-box {
+        margin-top: calc(#{$size_padding_big} * 2);
+    }
+}
+.sec--main {
+    @include breakpoint($breakpoint_desktop-small) {
+        &__inner {
+            padding-top: calc(3 * #{$size_padding});
+            padding-bottom: calc(3 * #{$size_padding});
+        }
+        &__head + &__content {
+            margin-top: calc(#{$size_padding} * 3);
+        }
+        .checklist-box + .tip,
+        .tip + .tip  {
+            margin-top: calc(#{$size_padding} * 2);
+        }
+        .tip + .checklist-box {
+            margin-top: calc(#{$size_padding} * 4);
+        }
+        .checklist-box + .checklist-box {
+            margin-top: calc(#{$size_padding} * 4);
+        }
+    }
+    @include breakpoint($breakpoint_smartphone) {
+        &__inner {
+            padding-top: calc(2 * #{$size_padding});
+            padding-bottom: calc(2 * #{$size_padding});
+        }
+        &__head + &__content {
+            margin-top: calc(#{$size_padding} * 2);
+        }
+        .checklist-box + .tip,
+        .tip + .tip {
+            margin-top: calc(#{$size_padding} * 1.5);
+        }
+        .tip + .checklist-box {
+            margin-top: calc(#{$size_padding} * 4);
+        }
+        .checklist-box + .checklist-box {
+            margin-top: calc(#{$size_padding} * 3);
+        }
+    }
+}
+
+.sec--foot {
+    background-color: $color_black_alt;
+    &__inner {
+        padding-top: calc(2 * #{$size_padding});
+        padding-bottom: calc(2 * #{$size_padding});
+    }
+}
+.sec--foot {
+    @include breakpoint($breakpoint_smartphone) {
+        &__inner {
+            padding-top: calc(2 * #{$size_padding_small});
+            padding-bottom: calc(2 * #{$size_padding_small});
+        }
+    }
+}
+
+ui-view {
+    display: block;
+    width: 100%;
+}
