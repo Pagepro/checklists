@@ -35,12 +35,6 @@ app.controller('detailsViewCtrl',[
             $scope.checkboxList = JSON.parse($window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id] || {});
         }
 
-        $scope.triggerScroll = function DVC_triggerScroll () {
-            angular.element('html, body').animate({
-                scrollTop: angular.element('.sec--main').offset().top
-            }, 600);
-        }
-
         ChecklistsFct.getChecklistJson().then(function (data) {
             $scope.allChecklists = data.data;
             $scope.setCurrentChecklist();
