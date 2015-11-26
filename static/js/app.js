@@ -5,12 +5,17 @@ app.config([
     '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/404');
+        // $urlRouterProvider.otherwise('/404');
 
         $stateProvider
             .state('errorState', {
                 url: '/404',
-                template: '<h1>404</h1><a href="#/details/1">details 1</a>'
+                templateUrl: 'templates/404.html'
+            })
+            .state('listsState', {
+                url: '/',
+                controller: 'listsViewCtrl',
+                templateUrl: 'templates/listsView.html'
             })
             .state('detailsState', {
                 url: '/details/:id',
@@ -18,6 +23,9 @@ app.config([
                 templateUrl: 'templates/detailsView.html'
             })
     }])
-    .run(function () {
-        console.log('it works!');
+    .run(function ($state) {
+        console.info('Angular app started!');
+        if (!$state.current.name) {
+            $state.go('listsState');
+        }
     });

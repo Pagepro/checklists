@@ -8,19 +8,14 @@ app.controller('detailsViewCtrl',[
         $scope.allChecklists = undefined;
         $scope.currentChecklist = undefined;
 
-        if(!$window.localStorage['pagepro_checklists']) {
-            $window.localStorage['pagepro_checklists'] = JSON.stringify({});
-        }
-
-        $scope.checkboxList = JSON.parse($window.localStorage['pagepro_checklists'] || {});
 
         $scope.changeTriggered = function DVC_changeTriggered () {
-            $window.localStorage['pagepro_checklists'] = JSON.stringify($scope.checkboxList);
+            $window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id] = JSON.stringify($scope.checkboxList);
         }
 
         $scope.resetCheckboxes = function DVC_resetCheckboxes () {
             $scope.checkboxList = {};
-            $window.localStorage['pagepro_checklists'] = JSON.stringify({});
+            $window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id] = JSON.stringify({});
         }
 
         $scope.setCurrentChecklist = function DVC_setCurrentChecklist () {
@@ -33,6 +28,11 @@ app.controller('detailsViewCtrl',[
             if (!$scope.currentChecklist) {
                 $state.go('errorState');
             }
+            if(!$window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id]) {
+                $window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id] = JSON.stringify({});
+            }
+
+            $scope.checkboxList = JSON.parse($window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id] || {});
         }
 
         $scope.triggerScroll = function DVC_triggerScroll () {
@@ -45,4 +45,4 @@ app.controller('detailsViewCtrl',[
             $scope.allChecklists = data.data;
             $scope.setCurrentChecklist();
         });
-    }])
+    }]);

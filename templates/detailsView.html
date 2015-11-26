@@ -1,499 +1,502 @@
 <header class="sec--head">
-            <div class="sec--head__inner">
-                <div class="sec--head__content">
-                    <div class="sec--head__content__box">
-                        <h1 class="logo">
-                            <span class="label">Pagepro</span>
-                        </h1>
-                    </div>
-                    <div class="sec--head__content__box">
-                        <h2 class="minor-title">
-                            <span class="label">{{currentChecklist.name}}</span>
+    <div class="sec--head__inner">
+        <div class="sec--head__content">
+            <div class="sec--head__content__box">
+                <h1 class="logo">
+                    <span class="label">Pagepro</span>
+                </h1>
+            </div>
+            <div class="sec--head__content__box">
+                <h2 class="minor-title">
+                    <span class="label">{{currentChecklist.name}}</span>
+                </h2>
+            </div>
+        </div>
+        <div class="sec--head__actions">
+            <a class="trigger-page-down js-trigger-page-down" ng-click="triggerScroll()">
+                <span class="trigger-page-down__content">
+                    <span class="icon icon--angle--down"></span>
+                </span>
+            </a>
+        </div>
+    </div>
+</header>
+<main class="sec--main">
+    <div class="sec--main__inner">
+        <div class="sec--main__head">
+            <div class="tip">
+                <div class="tip__inner">
+                    <div class="tip__head">
+                        <h2 class="subtitle highlighted">
+                            <span class="label">Before you start</span>
                         </h2>
                     </div>
-                </div>
-                <div class="sec--head__actions">
-                    <a class="trigger-page-down js-trigger-page-down" ng-click="triggerScroll()">
-                        <span class="trigger-page-down__content">
-                            <span class="icon icon--angle--down"></span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </header>
-        <main class="sec--main">
-            <div class="sec--main__inner">
-                <div class="sec--main__head">
-                    <div class="tip">
-                        <div class="tip__inner">
-                            <div class="tip__head">
-                                <h2 class="subtitle highlighted">
-                                    <span class="label">Before you start</span>
-                                </h2>
-                            </div>
-                            <div class="tip__content">
-                                <p>
-                                    {{currentChecklist.beforeStart}}
-                                </p>
-                            </div>
-                        </div>
+                    <div class="tip__content">
+                        <p>
+                            {{currentChecklist.beforeStart}}
+                        </p>
                     </div>
                 </div>
-                <div class="sec--main__content">
-                    <form class="form form--checklist" name="f">
-                        <fieldset class="form__fieldset">
-                            <div class="form__content">
-                                <div class="checklist-box" ng-repeat="list in currentChecklist.lists">
-                                    <div class="checklist-box__head">
-                                        <h3 class="main-title">
-                                            <span class="label">{{list.name}}</span>
-                                        </h3>
-                                    </div>
-                                    <div class="checklist-box__content">
-                                        <ul class="checklist">
-                                            <li class="checklist__item" ng-repeat="question in list.questions">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <div class="checkboxHolder"
-                                                              ng-class="{checked: checkboxList[question.id]}"></div>
-                                                        <input class="input input--checkbox"
-                                                               type="checkbox"
-                                                               name="{{question.id}}"
-                                                               id="{{question.id}}"
-                                                               ng-model="checkboxList[question.id]"
-                                                               ng-change="changeTriggered()">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label"
-                                                               for="{{question.id}}"
-                                                               ng-bind-html="question.label">
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+            </div>
+        </div>
+        <div class="sec--main__content">
+            <form class="form form--checklist" name="f">
+                <fieldset class="form__fieldset">
+                    <div class="form__content">
+                        <div class="checklist-box" ng-repeat="list in currentChecklist.lists">
+                            <div class="checklist-box__head">
+                                <h3 class="main-title">
+                                    <span class="label">{{list.name}}</span>
+                                </h3>
+                            </div>
+                            <div class="checklist-box__content">
+                                <ul class="checklist">
+                                    <li class="checklist__item" ng-repeat="question in list.questions">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <div class="checkboxHolder"
+                                                      ng-class="{checked: checkboxList[question.id]}"></div>
+                                                <input class="input input--checkbox"
+                                                       type="checkbox"
+                                                       name="{{question.id}}"
+                                                       id="{{question.id}}"
+                                                       ng-model="checkboxList[question.id]"
+                                                       ng-change="changeTriggered()">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label"
+                                                       for="{{question.id}}"
+                                                       ng-bind-html="question.label">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div class="checklist-box">
+                            <div class="checklist-box__head">
+                                <h3 class="main-title">
+                                    <span class="label">Package with design and design related files</span>
+                                </h3>
+                            </div>
+                            <div class="checklist-box__content">
+                                <ul class="checklist">
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-01">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_1-01">
+                                                    Have you included JPG files for all pages (Home Page) and all page variants (Home Page Popup, Filters Opened, Menu Expanded)?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-02">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_1-02">
+                                                    Have you included JPG and PSD files for desktop, tablet and smartphone if project requires to do RWD?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-03">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_1-03">
+                                                    Have you included PSD files covering all the pages and page variants including RWD version?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-04">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_1-04">
+                                                    Do you have naming convention for PSD and JPG (if page named About you should name PSD “About_vol-6.psd”)?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-05">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_1-05">
+                                                    Have you included all web fonts in all needed formats: .ttf, .eot, .woff, .svg, .otf?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-06">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_1-06">
+                                                    Have you sent the latest version of the files without duplicates or outdated versions?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        <!-- <div class="tip">
+                            <div class="tip__inner">
+                                <div class="tip__head">
+                                    <h2 class="subtitle">
+                                        <span class="label">Why we need JPG files for all pages and page variants?</span>
+                                    </h2>
                                 </div>
-                                <!-- <div class="checklist-box">
-                                    <div class="checklist-box__head">
-                                        <h3 class="main-title">
-                                            <span class="label">Package with design and design related files</span>
-                                        </h3>
-                                    </div>
-                                    <div class="checklist-box__content">
-                                        <ul class="checklist">
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-01">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_1-01">
-                                                            Have you included JPG files for all pages (Home Page) and all page variants (Home Page Popup, Filters Opened, Menu Expanded)?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-02">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_1-02">
-                                                            Have you included JPG and PSD files for desktop, tablet and smartphone if project requires to do RWD?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-03">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_1-03">
-                                                            Have you included PSD files covering all the pages and page variants including RWD version?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-04">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_1-04">
-                                                            Do you have naming convention for PSD and JPG (if page named About you should name PSD “About_vol-6.psd”)?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-05">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_1-05">
-                                                            Have you included all web fonts in all needed formats: .ttf, .eot, .woff, .svg, .otf?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_1-06">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_1-06">
-                                                            Have you sent the latest version of the files without duplicates or outdated versions?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div> -->
-                                <!-- <div class="tip">
-                                    <div class="tip__inner">
-                                        <div class="tip__head">
-                                            <h2 class="subtitle">
-                                                <span class="label">Why we need JPG files for all pages and page variants?</span>
-                                            </h2>
-                                        </div>
-                                        <div class="tip__content">
-                                            <p>
-                                                Sometimes it is hard to find every screen on PSD file. Delivering full list of pages as JPG files help us with preparing timeline, setting delivery order and defining whole project scope.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- <div class="tip">
-                                    <div class="tip__inner">
-                                        <div class="tip__head">
-                                            <h2 class="subtitle">
-                                                <span class="label">How should I deliver fonts?</span>
-                                            </h2>
-                                        </div>
-                                        <div class="tip__content">
-                                            <p>
-                                                We have few options:
-                                            </p>
-                                            <ul>
-                                                <li><strong>using system fonts</strong> (Arial, Verdana, Tahoma, Sans) - you don’t need to send anything,</li>
-                                                <li><strong>using Google Fonts</strong> - send links to Google Fonts details pages,</li>
-                                                <li><strong>using Custom Fonts</strong> - you must deliver .ttf, .eot, .woff, .svg, .otf formats, why? because browsers are using different formats and to cover all variants we need to have all of these,</li>
-                                                <li><strong>using font providers like TypeKit</strong> - send us access details to web service or send package generated in that service, please whitelist domains: localhost, prvsrv and your testing &amp; production domain names.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- <div class="checklist-box">
-                                    <div class="checklist-box__head">
-                                        <h3 class="main-title">
-                                            <span class="label">PSD quality</span>
-                                        </h3>
-                                    </div>
-                                    <div class="checklist-box__content">
-                                        <ul class="checklist">
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-01">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_2-01">
-                                                            Are you naming your layers / folders properly (logo - hover instead of layer2)?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-04">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_2-04">
-                                                            Are you using and sticking to grid (unified columns, paddings and margins)?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-02">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_2-02">
-                                                            Have you removed all unused layers / folders?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-03">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_2-03">
-                                                            Are you grouping your layers (header, footer…)?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-05">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_2-05">
-                                                            Have you provided hover examples?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-07">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_2-07">
-                                                            Have you gotten rid of blending modes in your PSD?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-06">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_2-06">
-                                                            Have you sent files in good resolution and quality (with Retina support)?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-08">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_2-08">
-                                                            Are you familliar with
-                                                        </label>
-                                                        <a href="http://photoshopetiquette.com" target="_blank">http://photoshopetiquette.com?</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div> -->
-                                <!-- <div class="checklist-box">
-                                    <div class="checklist-box__head">
-                                        <h3 class="main-title">
-                                            <span class="label">Functional specification</span>
-                                        </h3>
-                                    </div>
-                                    <div class="checklist-box__content">
-                                        <ul class="checklist">
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_3-02">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_3-02">
-                                                            Have you sent us document describing behaviour of the website (specification)?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_3-03">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_3-03">
-                                                            Have you sent us links to benchmarking websites with similar ideas?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_3-04">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_3-04">
-                                                            Have you sent link with animation explaining behavior of the feature
-                                                        </label>
-                                                        <span>(<a href="https://dribbble.com/shots/1956586-Filter-Menu" target="_blank">https://dribbble.com/shots/1956586-Filter-Menu</a>)?</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_3-01">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_3-01">
-                                                           Have you sent a link to wireframes / mockups?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div> -->
-                                <!-- <div class="checklist-box">
-                                    <div class="checklist-box__head">
-                                        <h3 class="main-title">
-                                            <span class="label">Operations</span>
-                                        </h3>
-                                    </div>
-                                    <div class="checklist-box__content">
-                                        <ul class="checklist">
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_4-01">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_4-01">
-                                                            Have you organized kick off meeting?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_4-02">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_4-02">
-                                                            Have you agreed on time frames for your project?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_4-03">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_4-03">
-                                                            Have you described timeline and important dates of your project (demo version, deadlines)?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_4-04">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_4-04">
-                                                            Do you know who your contact person is from the front-end team and what their availability is?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_4-05">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_4-05">
-                                                            Are you sure that during the project live developers will be available (vacations, bank holidays…)?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div> -->
-                                <!-- <div class="checklist-box">
-                                    <div class="checklist-box__head">
-                                        <h3 class="main-title">
-                                            <span class="label">Kick off meeting</span>
-                                        </h3>
-                                    </div>
-                                    <div class="checklist-box__content">
-                                        <ul class="checklist">
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_5-01">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_5-01">
-                                                            Have you checked if team downloaded and checked materials before meeting?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_5-02">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_5-02">
-                                                            Have you asked if anything is missing or incorrectly prepared by designer?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="checklist__item">
-                                                <div class="field field--checkbox">
-                                                    <div class="field__box field__box--checkbox">
-                                                        <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_5-03">
-                                                    </div>
-                                                    <div class="field__box field__box--label">
-                                                        <label class="label" for="checkbox_5-03">
-                                                            Have you checked if team will be available in release / going production time?
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div> -->
+                                <div class="tip__content">
+                                    <p>
+                                        Sometimes it is hard to find every screen on PSD file. Delivering full list of pages as JPG files help us with preparing timeline, setting delivery order and defining whole project scope.
+                                    </p>
+                                </div>
                             </div>
-                            <div class="form__actions">
-                                <button class="btn btn--reset" ng-click="resetCheckboxes()">
-                                    <span class="label">reset</span>
-                                </button>
+                        </div> -->
+                        <!-- <div class="tip">
+                            <div class="tip__inner">
+                                <div class="tip__head">
+                                    <h2 class="subtitle">
+                                        <span class="label">How should I deliver fonts?</span>
+                                    </h2>
+                                </div>
+                                <div class="tip__content">
+                                    <p>
+                                        We have few options:
+                                    </p>
+                                    <ul>
+                                        <li><strong>using system fonts</strong> (Arial, Verdana, Tahoma, Sans) - you don’t need to send anything,</li>
+                                        <li><strong>using Google Fonts</strong> - send links to Google Fonts details pages,</li>
+                                        <li><strong>using Custom Fonts</strong> - you must deliver .ttf, .eot, .woff, .svg, .otf formats, why? because browsers are using different formats and to cover all variants we need to have all of these,</li>
+                                        <li><strong>using font providers like TypeKit</strong> - send us access details to web service or send package generated in that service, please whitelist domains: localhost, prvsrv and your testing &amp; production domain names.</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-        </main>
-        <footer class="sec--foot">
-            <div class="sec--foot__inner">
-                <div class="sec--foot__box">
-                    <p class="copy">
-                        &copy; 2015 Pagepro. All rights reserved.
-                    </p>
-                </div>
-            </div>
-        </footer>
+                        </div> -->
+                        <!-- <div class="checklist-box">
+                            <div class="checklist-box__head">
+                                <h3 class="main-title">
+                                    <span class="label">PSD quality</span>
+                                </h3>
+                            </div>
+                            <div class="checklist-box__content">
+                                <ul class="checklist">
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-01">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_2-01">
+                                                    Are you naming your layers / folders properly (logo - hover instead of layer2)?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-04">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_2-04">
+                                                    Are you using and sticking to grid (unified columns, paddings and margins)?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-02">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_2-02">
+                                                    Have you removed all unused layers / folders?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-03">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_2-03">
+                                                    Are you grouping your layers (header, footer…)?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-05">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_2-05">
+                                                    Have you provided hover examples?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-07">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_2-07">
+                                                    Have you gotten rid of blending modes in your PSD?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-06">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_2-06">
+                                                    Have you sent files in good resolution and quality (with Retina support)?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_2-08">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_2-08">
+                                                    Are you familliar with
+                                                </label>
+                                                <a href="http://photoshopetiquette.com" target="_blank">http://photoshopetiquette.com?</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        <!-- <div class="checklist-box">
+                            <div class="checklist-box__head">
+                                <h3 class="main-title">
+                                    <span class="label">Functional specification</span>
+                                </h3>
+                            </div>
+                            <div class="checklist-box__content">
+                                <ul class="checklist">
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_3-02">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_3-02">
+                                                    Have you sent us document describing behaviour of the website (specification)?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_3-03">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_3-03">
+                                                    Have you sent us links to benchmarking websites with similar ideas?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_3-04">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_3-04">
+                                                    Have you sent link with animation explaining behavior of the feature
+                                                </label>
+                                                <span>(<a href="https://dribbble.com/shots/1956586-Filter-Menu" target="_blank">https://dribbble.com/shots/1956586-Filter-Menu</a>)?</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_3-01">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_3-01">
+                                                   Have you sent a link to wireframes / mockups?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        <!-- <div class="checklist-box">
+                            <div class="checklist-box__head">
+                                <h3 class="main-title">
+                                    <span class="label">Operations</span>
+                                </h3>
+                            </div>
+                            <div class="checklist-box__content">
+                                <ul class="checklist">
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_4-01">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_4-01">
+                                                    Have you organized kick off meeting?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_4-02">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_4-02">
+                                                    Have you agreed on time frames for your project?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_4-03">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_4-03">
+                                                    Have you described timeline and important dates of your project (demo version, deadlines)?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_4-04">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_4-04">
+                                                    Do you know who your contact person is from the front-end team and what their availability is?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_4-05">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_4-05">
+                                                    Are you sure that during the project live developers will be available (vacations, bank holidays…)?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        <!-- <div class="checklist-box">
+                            <div class="checklist-box__head">
+                                <h3 class="main-title">
+                                    <span class="label">Kick off meeting</span>
+                                </h3>
+                            </div>
+                            <div class="checklist-box__content">
+                                <ul class="checklist">
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_5-01">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_5-01">
+                                                    Have you checked if team downloaded and checked materials before meeting?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_5-02">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_5-02">
+                                                    Have you asked if anything is missing or incorrectly prepared by designer?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="checklist__item">
+                                        <div class="field field--checkbox">
+                                            <div class="field__box field__box--checkbox">
+                                                <input class="input input--checkbox" type="checkbox" name="list-item" id="checkbox_5-03">
+                                            </div>
+                                            <div class="field__box field__box--label">
+                                                <label class="label" for="checkbox_5-03">
+                                                    Have you checked if team will be available in release / going production time?
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="form__actions">
+                        <button class="btn btn--reset btn--back" ui-sref="listsState">
+                            <span class="label">Back</span>
+                        </button>
+                        <button class="btn btn--reset" ng-click="resetCheckboxes()">
+                            <span class="label">reset</span>
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>
+<footer class="sec--foot">
+    <div class="sec--foot__inner">
+        <div class="sec--foot__box">
+            <p class="copy">
+                &copy; 2015 Pagepro. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>

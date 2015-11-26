@@ -80,6 +80,9 @@
         &__actions {
             flex-wrap: wrap;
             @extend %helper--flex--right--top;
+            .btn--back {
+                margin-right: auto;
+            }
         }
         &__content {
             .checklist-box {
@@ -102,7 +105,8 @@
             }
         }
         .input {
-            visibility: hidden;
+            opacity: 0;
+            position: absolute;
             &--checkbox {
                 width: $size_checkbox;
                 height: $size_checkbox;

@@ -72,6 +72,38 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": 256,
+            "name": "Test list",
+            "beforeStart": "Some info, displayed the beggining.",
+            "lists": [
+                {
+                    "name": "This is a list name",
+                    "questions": [
+                        {
+                            "id": "list-3_1",
+                            "label": "This is a label for option"
+                        },
+                        {
+                            "id": "list-3_2",
+                            "label": "Another label"
+                        },
+                        {
+                            "id": "list-3_3",
+                            "label": "Third label"
+                        },
+                        {
+                            "id": "list-3_4",
+                            "label": "Label with <em>HTML</em> inside"
+                        },
+                        {
+                            "id": "list-3_5",
+                            "label": "Label with <a href=\"http://google.com\" target=\"_blank\">link</a> inside"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
