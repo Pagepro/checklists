@@ -3,7 +3,7 @@ app.controller('listsViewCtrl',[
     'ChecklistsFct',
     function ($scope, ChecklistsFct) {
 
-        $scope.allChecklists = undefined;
+        $scope.allChecklists = {};
 
         ChecklistsFct.getChecklistJson().then(function (data) {
             $scope.allChecklists = data.data.checklists;

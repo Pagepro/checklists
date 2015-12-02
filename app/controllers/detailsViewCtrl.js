@@ -4,12 +4,12 @@ app.controller('detailsViewCtrl',[
     '$window',
     'ChecklistsFct',
     '$state',
-    '$stateParams',
-    function ($scope, $rootScope, $window, ChecklistsFct, $state, $stateParams) {
+    function ($scope, $rootScope, $window, ChecklistsFct, $state) {
         $scope.allChecklists = {};
         $scope.currentChecklist = {};
+        $scope.checkboxList = {};
         $scope.localStorageNamespace = 'pagepro_checklists_';
-
+        $scope.date = new Date();
 
         $scope.changeTriggered = function DVC_changeTriggered () {
             $window.localStorage[$scope.localStorageNamespace + $scope.currentChecklist.id] = JSON.stringify($scope.checkboxList);
@@ -21,27 +21,40 @@ app.controller('detailsViewCtrl',[
         }
 
         $scope.setCurrentChecklist = function DVC_setCurrentChecklist () {
+            if (!$state.params) {
+                $state.go('errorState');
+                return;
+            }
             $scope.allChecklists.checklists.forEach(function (elem) {
-                if (elem.id === +$stateParams.id) {
+                if (+elem.id === +$state.params.id) {
                     $scope.currentChecklist = elem;
                     return;
                 }
             });
+            // if id is not found, redirect to 404
             if (!Object.keys($scope.currentChecklist).length) {
                 $state.go('errorState');
+                return;
             }
+            // set new localstorage namespace for current list if do not exists
             if(!$window.localStorage[$scope.localStorageNamespace + $scope.currentChecklist.id]) {
                 $window.localStorage[$scope.localStorageNamespace + $scope.currentChecklist.id] = JSON.stringify({});
             }
 
-            $scope.checkboxList = JSON.parse($window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id] || {});
+            // get list of checked checkboxes from localstorage
+            $scope.checkboxList = JSON.parse($window.localStorage['pagepro_checklists_' + $scope.currentChecklist.id]);
 
             // setting up new page title
             $rootScope.title = $scope.currentChecklist.name;
         }
 
-        ChecklistsFct.getChecklistJson().then(function (data) {
-            $scope.allChecklists = data.data;
-            $scope.setCurrentChecklist();
-        });
+        $scope.getChecklistJson = function DVC_getChecklistJson () {
+            ChecklistsFct.getChecklistJson().then(function (data) {
+                $scope.allChecklists = data.data;
+                $scope.setCurrentChecklist();
+            });
+        }
+
+        $scope.getChecklistJson();
+
     }]);
