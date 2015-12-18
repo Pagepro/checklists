@@ -16,12 +16,13 @@
     width: $size_inner;
 }
 %helper--inner {
-    @include breakpoint($breakpoint_desktop-medium) {
-        width: 100%;
-        padding-right: $size_padding_big;
-        padding-left: $size_padding_big;
-    }
+    // @include breakpoint($breakpoint_desktop-medium) {
+    //     width: 100%;
+    //     padding-right: $size_padding_big;
+    //     padding-left: $size_padding_big;
+    // }
     @include breakpoint($breakpoint_desktop-small) {
+        width: 100%;
         padding-right: calc(#{$size_padding} * 2);
         padding-left: calc(#{$size_padding} * 2);
     }
@@ -86,7 +87,41 @@
 %helper--transition {
     transition: 170ms ease;
 }
-%helper--absolute--center {
+%helper--absolute--center-vertical {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    margin: auto 0;
+}
+%helper--absolute--center-vertical--horizontal-to-left {
+    left: 0;
+
+    @extend %helper--absolute--center-vertical;
+}
+%helper--absolute--center-vertical--horizontal-to-right {
+    right: 0;
+
+    @extend %helper--absolute--center-vertical;
+}
+%helper--absolute--center-horizontal {
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    margin: 0 auto;
+}
+%helper--absolute--center-horizontal--vertical-to-top {
+    top: 0;
+
+    @extend %helper--absolute--center-horizontal;
+}
+%helper--absolute--center-horizontal--vertical-to-bottom {
+    bottom: 0;
+
+    @extend %helper--absolute--center-horizontal;
+}
+%helper--absolute--center--center {
     position: absolute;
     top: 0;
     right: 0;
@@ -239,6 +274,15 @@
 
     list-style: none;
 }
+%helper--list--ordered {
+    list-style: none;
+
+    counter-reset: li;
+}
+%helper--list--ordered--counter {
+    content: counter(li);
+    counter-increment: li;
+}
 %helper--list--flex {
     display: flex;
 
@@ -276,20 +320,16 @@
     @include breakpoint($breakpoint_smartphone) {
         width: 100%;
         .label {
+            width: 100%;
             padding-top: 1px;
 
             font-size: 16px;
+
+            text-align: center;
         }
     }
 }
 
-a,
 [ng-click] {
     cursor: pointer;
-}
-
-.go-listview {
-    font-size: 20px;
-    font-weight: 600;
-    color: $color_white;
 }

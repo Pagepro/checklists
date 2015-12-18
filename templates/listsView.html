@@ -1,8 +1,57 @@
-<ul>
-    <li ng-repeat="list in allChecklists">
-        <a ui-sref="detailsState({id: list.id})">
-            <span>{{$index+1}}</span>
-            <span>{{list.name}}</span>
-        </a>
-    </li>
-</ul>
+<div class="list-holder">
+    <header class="sec--head sec--head--alt">
+        <div class="sec--head__inner">
+            <div class="sec--head__content">
+                <div class="sec--head__content__box">
+                    <h1 class="logo">
+                        <span class="object-wrapper">
+                            <object type="image/svg+xml" data="/static/img/pagepro_logo_white.svg" aria-label="Logo Pagepro">Your browser doesn't support svg objects</object>
+                        </span>
+                    </h1>
+                </div>
+                <div class="sec--head__content__box">
+                    <h2 class="minor-title minor-title--alt">
+                        <span class="label">Quality<br> Checklists</span>
+                    </h2>
+                    <p>
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiisen.
+                    </p>
+                    <p>
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem.
+                    </p>
+                    <p class="quote">
+                        <span class="label">Pagepro Team</span>
+                    </p>
+                </div>
+            </div>
+            <footer class="sec--head__foot">
+                <div class="sec--head__foot__inner">
+                    <div class="sec--head__foot__box">
+                        <p class="copy">
+                            &copy; 2015 <a href="http://www.pagepro.pl/" target="_blank">Pagepro</a>. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </header>
+    <main class="sec--main sec--main--alt">
+        <div class="sec--main__inner">
+            <div class="sec--main__content">
+                <ol class="checklists">
+                    <li class="checklists__item"
+                        ng-repeat="list in allChecklists">
+                        <a class="checklists__item__inner" ui-sref="detailsState({id: list.id})">
+                            <div class="checklists__item__counter"></div>
+                            <div class="checklists__item__content">
+                                <h3 class="special-title">
+                                    <span class="label">{{list.name}}</span>
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </main>
+</div>

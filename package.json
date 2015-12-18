@@ -22,7 +22,14 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uncache": "^0.4.0-beta1",
     "gulp.spritesmith": "^3.8.2",
+    "jasmine-core": "^2.3.4",
     "jquery": "1.11.2",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.4",
+    "karma-jasmine-html-reporter": "^0.1.8",
+    "karma-jasmine-html-reporter-livereload": "^1.0.0",
     "phantomjssmith": "^1.0.0"
   }
 }

@@ -29,9 +29,10 @@ app.config([
             })
     }])
     .run(function ($rootScope, $state) {
-        console.info('Angular app started!');
-        // setting new page title
+        // setting new page title on state changing
         $rootScope.$on('$stateChangeSuccess', function (event, toState) {
             $rootScope.title = toState.title;
-        })
+            // sroll top on state change
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        });
     });
