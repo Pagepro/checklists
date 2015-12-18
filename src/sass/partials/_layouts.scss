@@ -1,6 +1,15 @@
 /* ==========================================================================
    Layouts
    ========================================================================== */
+ui-view {
+    display: block;
+    width: 100%;
+}
+.list-holder {
+    flex-wrap: wrap;
+    @extend %helper--flex--center--top;
+    justify-content: flex-end;
+}
 .sec--head,
 .sec--main,
 .sec--foot {
@@ -9,7 +18,22 @@
         @extend %helper--inner;
     }
 }
-
+.sec--head,
+.sec--main {
+    &--alt {
+        width: 50%;
+        max-width: 50%;
+    }
+}
+.sec--head,
+.sec--main {
+    @include breakpoint($breakpoint_desktop-small_special) {
+        &--alt {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
 .sec--head {
     height: 100vh;
 
@@ -20,6 +44,8 @@
         color: $color_white;
     }
     &__inner {
+        position: relative;
+
         height: 100%;
         padding-top: 15vh;
         padding-bottom: 15vh;
@@ -35,30 +61,113 @@
         @extend %helper--flex--center--center;
     }
     &__content {
-        height: calc(100% - 124px);
-
         flex-wrap: wrap;
         &__box {
             width: 100%;
 
             @extend %helper--flex--center--center;
+            flex-wrap: wrap;
+            > p {
+                text-transform: uppercase;
+
+                color: $color_white;
+            }
         }
         &__box + &__box {
-            margin-top: calc(#{$size_padding} * 2);
+            margin-top: calc(#{$size_padding} * 3);
         }
     }
     &__actions {
+        bottom: 50px;
+
+        @extend %helper--absolute--center-horizontal;
         .trigger-page-down {
             min-width: 40%;
         }
     }
-    &__content + &__actions {
-        padding-top: calc(#{$size_padding} * 3);
+    &--alt {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        .sec--head {
+            &__inner {
+                width: 100%;
+                max-width: 100%;
+            }
+            &__content {
+                &__box {
+                    max-width: 655px;
+
+                    justify-content: flex-start;
+                    > p, > h2 {
+                        width: 100%;
+                    }
+                    > p {
+                        line-height: 1.9;
+                    }
+                    .minor-title + p {
+                        margin-top: 20px;
+                    }
+                    > p + .quote {
+                        margin-top: 22px;
+                    }
+                    .quote {
+                        margin-bottom: 0;
+
+                        @extend %helper--flex--right--center;
+                    }
+                }
+            }
+            &__foot {
+                width: 100%;
+                max-width: 655px;
+
+                @extend %helper--absolute--center-horizontal--vertical-to-bottom;
+                &__inner {
+                    width: 100%;
+                    padding-top: calc(2 * #{$size_padding});
+                    padding-right: 0;
+                    padding-bottom: calc(2 * #{$size_padding});
+                    padding-left: 0;
+                    .copy {
+                        color: $color_white;
+                        > a {
+                            color: $color_white;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 .sec--head {
+    @include breakpoint($breakpoint_desktop-medium_special) {
+        &--alt {
+            .sec--head {
+                &__foot {
+                    max-width: 100%;
+                    padding: 0 55px;
+                }
+            }
+        }
+    }
+    @include breakpoint($breakpoint_desktop-small_special) {
+        &--alt {
+            position: relative;
+
+            width: 100%;
+            .sec--head {
+                &__foot {
+                    display: none;
+                }
+            }
+        }
+    }
     @include breakpoint($breakpoint_tablet) {
+        background-attachment: scroll;
+        background-position: center;
         &__actions {
             .trigger-page-down {
                 min-width: 100%;
@@ -72,8 +181,12 @@
                 margin-top: calc(#{$size_padding_small} * 2);
             }
         }
-        &__content + &__actions {
-            padding-top: calc(#{$size_padding_small} * 3);
+        &--alt {
+            .sec--head {
+                &__content {
+                    height: 100%;
+                }
+            }
         }
     }
 }
@@ -99,6 +212,15 @@
     .checklist-box + .checklist-box {
         margin-top: calc(#{$size_padding_big} * 2);
     }
+    &--alt {
+        .sec--main {
+            &__inner {
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+    }
 }
 .sec--main {
     @include breakpoint($breakpoint_desktop-small) {
@@ -110,7 +232,7 @@
             margin-top: calc(#{$size_padding} * 3);
         }
         .checklist-box + .tip,
-        .tip + .tip  {
+        .tip + .tip {
             margin-top: calc(#{$size_padding} * 2);
         }
         .tip + .checklist-box {
@@ -155,9 +277,4 @@
             padding-bottom: calc(2 * #{$size_padding_small});
         }
     }
-}
-
-ui-view {
-    display: block;
-    width: 100%;
 }

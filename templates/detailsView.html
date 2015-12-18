@@ -13,9 +13,9 @@
             </div>
         </div>
         <div class="sec--head__actions">
-            <a class="trigger-page-down js-trigger-page-down" scroll-to-elem=".sec--main">
+            <a class="trigger-page-down" scroll-to-elem=".sec--main">
                 <span class="trigger-page-down__content">
-                    <span class="icon icon--angle--down"></span>
+                    <object type="image/svg+xml" data="/static/img/check.svg">Scroll for more</object>
                 </span>
             </a>
         </div>
@@ -54,14 +54,13 @@
                                     <li class="checklist__item" ng-repeat="question in list.questions">
                                         <div class="field field--checkbox">
                                             <div class="field__box field__box--checkbox">
-                                                <div class="checkboxHolder"
-                                                      ng-class="{checked: checkboxList[question.id]}"></div>
                                                 <input class="input input--checkbox"
                                                        type="checkbox"
                                                        name="{{question.id}}"
                                                        id="{{question.id}}"
                                                        ng-model="checkboxList[question.id]"
                                                        ng-change="changeTriggered()">
+                                                <div class="checkbox-holder"></div>
                                             </div>
                                             <div class="field__box field__box--label">
                                                 <label class="label"

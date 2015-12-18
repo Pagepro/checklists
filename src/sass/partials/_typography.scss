@@ -18,6 +18,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
     flex-wrap: wrap;
     @extend %helper--flex--center--top;
+    &.index {
+        justify-content: flex-end;
+    }
 }
 
 body {
