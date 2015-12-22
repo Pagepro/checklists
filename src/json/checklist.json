@@ -1,109 +1,107 @@
-{
-    "checklists": [
-        {
-            "id": 1,
-            "name": "PSD to HTML",
-            "beforeStart": "THESE ARE MERELY SUGGESTIONS FOR YOUR WORKFLOW. FEEL FREE TO CONTRIBUTE ON GITHUB OR MAKE A FORK AND CREATE YOUR OWN UNIQUE WORKFLOW CHECKLIST. THIS LIST IS MEANT FOR VISUAL DESIGNERS WORKING WITHIN A TEAM SETTING WHERE VISUAL COMPS AND EXPLORATION WILL BE SHARED WITH A DEVELOPER. CHECKBOXES ARE PERSISTENT (THEY WON'T UNCHECK ON REFRESH) WHERE LOCALSTORAGE IS SUPPORTED.",
-            "lists": [
-                {
-                    "name": "Package with design and design related files",
-                    "questions": [
-                        {
-                            "id": "list-1_1",
-                            "label": "HAVE YOU INCLUDED JPG FILES FOR ALL PAGES (HOME PAGE) AND ALL PAGE VARIANTS (HOME PAGE POPUP, FILTERS OPENED, MENU EXPANDED)?"
-                        },
-                        {
-                            "id": "list-1_2",
-                            "label": "HAVE YOU INCLUDED JPG AND PSD FILES FOR DESKTOP, TABLET AND SMARTPHONE IF PROJECT REQUIRES TO DO RWD?"
-                        },
-                        {
-                            "id": "list-1_3",
-                            "label": "HAVE YOU INCLUDED PSD FILES COVERING ALL THE PAGES AND PAGE VARIANTS INCLUDING RWD VERSION?"
-                        },
-                        {
-                            "id": "list-1_4",
-                            "label": "DO YOU HAVE NAMING CONVENTION FOR PSD AND JPG (IF PAGE NAMED ABOUT YOU SHOULD NAME PSD “ABOUT_VOL-6.PSD”)?"
-                        },
-                        {
-                            "id": "list-1_5",
-                            "label": "HAVE YOU INCLUDED ALL WEB FONTS IN ALL NEEDED FORMATS: .TTF, .EOT, .WOFF, .SVG, .OTF?"
-                        },
-                        {
-                            "id": "list-1_6",
-                            "label": "HAVE YOU SENT THE LATEST VERSION OF THE FILES WITHOUT DUPLICATES OR OUTDATED VERSIONS?"
-                        }
-                    ]
-                },
-                {
-                    "name": "PSD quality",
-                    "questions": [
-                        {
-                            "id": "list-2_1",
-                            "label": "Are you naming your layers / folders properly (logo - hover instead of layer2)?"
-                        },
-                        {
-                            "id": "list-2_2",
-                            "label": "Are you using and sticking to grid (unified columns, paddings and margins)?"
-                        },
-                        {
-                            "id": "list-2_3",
-                            "label": "Have you removed all unused layers / folders?"
-                        },
-                        {
-                            "id": "list-2_4",
-                            "label": "Are you grouping your layers (header, footer…)?"
-                        },
-                        {
-                            "id": "list-2_5",
-                            "label": "Have you provided hover examples?"
-                        },
-                        {
-                            "id": "list-2_6",
-                            "label": "Have you gotten rid of blending modes in your PSD?"
-                        },
-                        {
-                            "id": "list-2_7",
-                            "label": "Have you sent files in good resolution and quality (with Retina support)?"
-                        },
-                        {
-                            "id": "list-2_8",
-                            "label": "Are you familliar with <a href=\"http://photoshopetiquette.com\" target=\"_blank\">http://photoshopetiquette.com</a>?"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 256,
-            "name": "Test list",
-            "beforeStart": "Some info, displayed the beggining.",
-            "lists": [
-                {
-                    "name": "This is a list name",
-                    "questions": [
-                        {
-                            "id": "list-3_1",
-                            "label": "This is a label for option"
-                        },
-                        {
-                            "id": "list-3_2",
-                            "label": "Another label"
-                        },
-                        {
-                            "id": "list-3_3",
-                            "label": "Third label"
-                        },
-                        {
-                            "id": "list-3_4",
-                            "label": "Label with <em>HTML</em> inside"
-                        },
-                        {
-                            "id": "list-3_5",
-                            "label": "Label with <a href=\"http://google.com\" target=\"_blank\">link</a> inside"
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "name": "PSD to HTML",
+        "beforeStart": "THESE ARE MERELY SUGGESTIONS FOR YOUR WORKFLOW. FEEL FREE TO CONTRIBUTE ON GITHUB OR MAKE A FORK AND CREATE YOUR OWN UNIQUE WORKFLOW CHECKLIST. THIS LIST IS MEANT FOR VISUAL DESIGNERS WORKING WITHIN A TEAM SETTING WHERE VISUAL COMPS AND EXPLORATION WILL BE SHARED WITH A DEVELOPER. CHECKBOXES ARE PERSISTENT (THEY WON'T UNCHECK ON REFRESH) WHERE LOCALSTORAGE IS SUPPORTED.",
+        "lists": [
+            {
+                "name": "Package with design and design related files",
+                "questions": [
+                    {
+                        "id": "list-1_1",
+                        "label": "HAVE YOU INCLUDED JPG FILES FOR ALL PAGES (HOME PAGE) AND ALL PAGE VARIANTS (HOME PAGE POPUP, FILTERS OPENED, MENU EXPANDED)?"
+                    },
+                    {
+                        "id": "list-1_2",
+                        "label": "HAVE YOU INCLUDED JPG AND PSD FILES FOR DESKTOP, TABLET AND SMARTPHONE IF PROJECT REQUIRES TO DO RWD?"
+                    },
+                    {
+                        "id": "list-1_3",
+                        "label": "HAVE YOU INCLUDED PSD FILES COVERING ALL THE PAGES AND PAGE VARIANTS INCLUDING RWD VERSION?"
+                    },
+                    {
+                        "id": "list-1_4",
+                        "label": "DO YOU HAVE NAMING CONVENTION FOR PSD AND JPG (IF PAGE NAMED ABOUT YOU SHOULD NAME PSD “ABOUT_VOL-6.PSD”)?"
+                    },
+                    {
+                        "id": "list-1_5",
+                        "label": "HAVE YOU INCLUDED ALL WEB FONTS IN ALL NEEDED FORMATS: .TTF, .EOT, .WOFF, .SVG, .OTF?"
+                    },
+                    {
+                        "id": "list-1_6",
+                        "label": "HAVE YOU SENT THE LATEST VERSION OF THE FILES WITHOUT DUPLICATES OR OUTDATED VERSIONS?"
+                    }
+                ]
+            },
+            {
+                "name": "PSD quality",
+                "questions": [
+                    {
+                        "id": "list-2_1",
+                        "label": "Are you naming your layers / folders properly (logo - hover instead of layer2)?"
+                    },
+                    {
+                        "id": "list-2_2",
+                        "label": "Are you using and sticking to grid (unified columns, paddings and margins)?"
+                    },
+                    {
+                        "id": "list-2_3",
+                        "label": "Have you removed all unused layers / folders?"
+                    },
+                    {
+                        "id": "list-2_4",
+                        "label": "Are you grouping your layers (header, footer…)?"
+                    },
+                    {
+                        "id": "list-2_5",
+                        "label": "Have you provided hover examples?"
+                    },
+                    {
+                        "id": "list-2_6",
+                        "label": "Have you gotten rid of blending modes in your PSD?"
+                    },
+                    {
+                        "id": "list-2_7",
+                        "label": "Have you sent files in good resolution and quality (with Retina support)?"
+                    },
+                    {
+                        "id": "list-2_8",
+                        "label": "Are you familliar with <a href=\"http://photoshopetiquette.com\" target=\"_blank\">http://photoshopetiquette.com</a>?"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 256,
+        "name": "Test list",
+        "beforeStart": "Some info, displayed the beggining.",
+        "lists": [
+            {
+                "name": "This is a list name",
+                "questions": [
+                    {
+                        "id": "list-3_1",
+                        "label": "This is a label for option"
+                    },
+                    {
+                        "id": "list-3_2",
+                        "label": "Another label"
+                    },
+                    {
+                        "id": "list-3_3",
+                        "label": "Third label"
+                    },
+                    {
+                        "id": "list-3_4",
+                        "label": "Label with <em>HTML</em> inside"
+                    },
+                    {
+                        "id": "list-3_5",
+                        "label": "Label with <a href=\"http://google.com\" target=\"_blank\">link</a> inside"
+                    }
+                ]
+            }
+        ]
+    }
+]

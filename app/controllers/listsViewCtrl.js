@@ -5,7 +5,7 @@ app.controller('listsViewCtrl',[
 
         $scope.allChecklists = {};
 
-        ChecklistsFct.getChecklistJson().then(function (data) {
-            $scope.allChecklists = data.data.checklists;
+        ChecklistsFct.getChecklistJson().then(function (response) {
+            $scope.allChecklists = response.data;
         });
     }]);

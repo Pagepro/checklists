@@ -52,7 +52,7 @@ ui-view {
 
         justify-content: center;
         flex-wrap: wrap;
-        @extend %helper--flex--vertical-space-between;
+        @extend %helper--flex--stretch;
     }
     &__content,
     &__actions {

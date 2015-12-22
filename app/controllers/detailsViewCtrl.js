@@ -25,7 +25,7 @@ app.controller('detailsViewCtrl',[
                 $state.go('errorState');
                 return;
             }
-            $scope.allChecklists.checklists.forEach(function (elem) {
+            $scope.allChecklists.forEach(function (elem) {
                 if (+elem.id === +$state.params.id) {
                     $scope.currentChecklist = elem;
                     return;
@@ -49,8 +49,8 @@ app.controller('detailsViewCtrl',[
         }
 
         $scope.getChecklistJson = function DVC_getChecklistJson () {
-            ChecklistsFct.getChecklistJson().then(function (data) {
-                $scope.allChecklists = data.data;
+            ChecklistsFct.getChecklistJson().then(function (response) {
+                $scope.allChecklists = response.data;
                 $scope.setCurrentChecklist();
             });
         }
