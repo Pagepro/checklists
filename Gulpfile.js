@@ -46,8 +46,9 @@ gulp.task('copy', function() {
 });
 gulp.task('sass', function () {
     gulp.src('./src/sass/**/*.scss')
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(sass())
+        .pipe(autoprefixer())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./static/css'))
         .pipe(reload({
