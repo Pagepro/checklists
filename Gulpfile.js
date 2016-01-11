@@ -5,11 +5,17 @@ var browser = require('browser-sync');
 var reload = browser.reload;
 var spritesmith = require('gulp.spritesmith');
 var rev = require('gulp-rev');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 var autoprefixer = require('gulp-autoprefixer');
 var htmllint = require('gulp-htmllint');
 var eslint = require('gulp-eslint');
 var plumber = require('gulp-plumber');
 var run = require('gulp-run');
+
+var jsFiles = [
+    'app/**/*.js'
+];
 
 gulp.task('rev', function () {
     gulp.src('*.html')
@@ -30,8 +36,14 @@ gulp.task('serve', ['sass'], function() {
 gulp.task('watch', function() {
     gulp.watch("src/sass/**", ['sass']);
     gulp.watch("src/img/**", ['copy']);
-    gulp.watch("src/js/**", ['copy']);
+    gulp.watch("app/**/*.js", ['dist']);
     gulp.watch(['*.html', 'src/**/*.js'], reload);
+});
+gulp.task('dist', function () {
+    gulp.src(jsFiles)
+        .pipe(concat('app.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist'));
 });
 gulp.task('copy', function() {
     gulp.src('src/js/**')
