@@ -59,27 +59,166 @@
         ]
     },
     {
-        "id": 256,
-        "name": "Test list",
+        "id": 2,
+        "name": "Web standards checklist",
         "beforeStart": "Some info, displayed the beggining.",
         "lists": [
             {
-                "name": "This is a list name",
+                "name": "Quality of code",
                 "questions": [
                     {
-                        "label": "This is a label for option"
+                        "label": "Does the site use a correct Doctype?"
                     },
                     {
-                        "label": "Another label"
+                        "label": "Does the site use a Character set?"
                     },
                     {
-                        "label": "Third label"
+                        "label": "Does the site use Valid HTML?"
                     },
                     {
-                        "label": "Label with <em>HTML</em> inside"
+                        "label": "Does the site use Valid CSS?"
                     },
                     {
-                        "label": "Label with <a href=\"http://google.com\" target=\"_blank\">link</a> inside"
+                        "label": "Does the site use any CSS hacks?"
+                    },
+                    {
+                        "label": "Does the site use unnecessary classes or ids?"
+                    },
+                    {
+                        "label": "Is the code well structured?"
+                    },
+                    {
+                        "label": "Does the site have any broken links?"
+                    },
+                    {
+                        "label": "How does the site perform in terms of speed/page size?"
+                    },
+                    {
+                        "label": "Does the site have JavaScript errors?"
+                    }
+                ]
+            },
+            {
+                "name": "Degree of separation between content and presentation",
+                "questions": [
+                    {
+                        "label": "Does the site use CSS for all presentation aspects (fonts, colour, padding, borders etc)?"
+                    },
+                    {
+                        "label": "Are all decorative images in the CSS, or do they appear in the (X)HTML?"
+                    }
+                ]
+            },
+            {
+                "name": "Accessibility for users",
+                "questions": [
+                    {
+                        "label": "Are “alt” attributes used for all descriptive images?"
+                    },
+                    {
+                        "label": "Does the site use relative units rather than absolute units for text size?"
+                    },
+                    {
+                        "label": "Does the site use visible skip menus?"
+                    },
+                    {
+                        "label": "Does the site use accessible forms?"
+                    },
+                    {
+                        "label": "Does the site use accessible tables?"
+                    },
+                    {
+                        "label": "Is there sufficient colour brightness/contrasts?"
+                    },
+                    {
+                        "label": "Is colour alone used for critical information?"
+                    },
+                    {
+                        "label": "Is there delayed responsiveness for dropdown menus (for users with reduced motor skills)?"
+                    },
+                    {
+                        "label": "Are all links descriptive (for blind users)?"
+                    }
+                ]
+            },
+            {
+                "name": "Accessibility for devices",
+                "questions": [
+                    {
+                        "label": "Does the site work acceptably across modern and older browsers?"
+                    },
+                    {
+                        "label": "Is the content accessible with CSS switched off or not supported?"
+                    },
+                    {
+                        "label": "Is the content accessible with images switched off or not supported?"
+                    },
+                    {
+                        "label": "Does the site work in text browsers such as Lynx?"
+                    },
+                    {
+                        "label": "Does the site work well when printed?"
+                    },
+                    {
+                        "label": "Does the site work well in Hand Held devices?"
+                    },
+                    {
+                        "label": "Does the site include detailed metadata?"
+                    },
+                    {
+                        "label": "Does the site work well in a range of browser window sizes?"
+                    }
+                ]
+            },
+            {
+                "name": "Basic Usability",
+                "questions": [
+                    {
+                        "label": "Is there a clear visual hierarchy?"
+                    },
+                    {
+                        "label": "Are heading levels easy to distinguish?"
+                    },
+                    {
+                        "label": "Is the site’s navigation easy to understand?"
+                    },
+                    {
+                        "label": "Is the site’s navigation consistent?"
+                    },
+                    {
+                        "label": "Does the site use consistent and appropriate language?"
+                    },
+                    {
+                        "label": "Does the site have a sitemap page and contact page? Are they easy to find?"
+                    },
+                    {
+                        "label": "For large sites, is there a search tool?"
+                    },
+                    {
+                        "label": "Is there a link to the home page on every page in the site?"
+                    },
+                    {
+                        "label": "Are links underlined?"
+                    },
+                    {
+                        "label": "Are visited links clearly defined?"
+                    }
+                ]
+            },
+            {
+                "name": "Site management",
+                "questions": [
+                    {
+                        "label": "Does the site have a meaningful and helpful 404 error page that works from any depth in the site?"
+                    },
+                    {
+                        "label": "Does the site use friendly URLs?"
+                    },
+                    {
+                        "label": "Do your URLs work without “www”?"
+                    },
+                    {
+                        "label": "Does the site have a favicon?"
                     }
                 ]
             }
