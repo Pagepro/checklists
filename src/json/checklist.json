@@ -223,5 +223,135 @@
                 ]
             }
         ]
+    },
+    {
+        "id": 3,
+        "name": "ScrumMaster's Checklist",
+        "beforeStart": "Some info, displayed the beggining.",
+        "lists": [
+            {
+                "name": "How is my Product Owner doing?",
+                "questions": [
+                    {
+                        "label": "Is the Product Backlog prioritized according to his/her latest thinking?"
+                    },
+                    {
+                        "label": "Are all the requirements and desirements from all stakeholders for the product captured in the backlog? "
+                    },
+                    {
+                        "label": "Is the Product Backlog a manageable size?"
+                    },
+                    {
+                        "label": "Could any requirements (especially those near the top of the Product Backlog) be better expressed as independent, negotiable, valuable, estimable, small, and testable user stories?"
+                    },
+                    {
+                        "label": "Have you educated your Product Owner about technical debt and how to avoid it?"
+                    },
+                    {
+                        "label": "Is the backlog an information radiator, clearly visible to all stakeholders?"
+                    },
+                    {
+                        "label": "If you're using an automated tool for backlog management, is it actually working for you?"
+                    },
+                    {
+                        "label": "Can you help radiate by showing everyone printouts?"
+                    },
+                    {
+                        "label": "Can you help radiate by creating big visible charts?"
+                    },
+                    {
+                        "label": "Have you helped your Product Owner organize backlog items into appropriate releases (e.g., front burner, back burner, fridge)?"
+                    },
+                    {
+                        "id": 2,
+                        "label": "Do all stakeholders (including the team) know whether the release plan still matches reality, based on the current velocity (e.g., story points per Sprint)?"
+                    },
+                    {
+                        "id": 3,
+                        "label": "Did your Product Owner adjust the release plan after the last Sprint Review Meeting?"
+                    }
+                ]
+            },
+            {
+                "name": "How is my team doing?",
+                "questions": [
+                    {
+                        "label": "Are team members spending most of their time in the state of flow?"
+                    },
+                    {
+                        "label": "Do team members seem to like each other, goof off together, and celebrate each other's success?"
+                    },
+                    {
+                        "label": "Do team members hold each other accountable to high standards, and challenge each other to grow?"
+                    },
+                    {
+                        "label": "Are there issues/opportunities the team isn't discussing because they're too uncomfortable?"
+                    },
+                    {
+                        "label": "Have you tried a variety of formats and locations for Sprint Retrospective Meetings?"
+                    },
+                    {
+                        "label": "Has the team kept focus on acceptance criteria?"
+                    },
+                    {
+                        "label": "Does the Sprint Backlog reflect what the team is actually doing?"
+                    },
+                    {
+                        "id": 22,
+                        "label": "Are your team's task estimates and/or your taskboard up to date?"
+                    },
+                    {
+                        "id": 22,
+                        "label": "Are the team self-management artifacts (taskboard, Sprint Burndown Chart, etc.) visible to the team, convenient for the team to use?"
+                    },
+                    {
+                        "id": 22,
+                        "label": "Are the team self-management artifacts adequately protected from micromanagers?"
+                    },
+                    {
+                        "id": 22,
+                        "label": "Do team members volunteer for tasks?"
+                    },
+                    {
+                        "id": 22,
+                        "label": "Are technical debt repayment items (to address issues sapping your team's velocity) captured in the backlog, or otherwise communicated with the Product Owner?"
+                    },
+                    {
+                        "id": 22,
+                        "label": "Are team members leaving their job titles outside the team room?"
+                    },
+                    {
+                        "id": 22,
+                        "label": "Does the entire team consider itself collectively responsible for testing, user documentation, etc.?"
+                    }
+                ]
+            },
+            {
+                "name": "How is the organization doing?",
+                "questions": [
+                    {
+                        "label": "Is the appropriate amount of inter-team coordination happening?"
+                    },
+                    {
+                        "label": "Is the inter-team coordination done by the people with their hands dirty in the work, as recommended?"
+                    },
+                    {
+                        "label": "Are your ScrumMasters meeting with each other, working the organizational impediments list?"
+                    },
+                    {
+                        "label": "When appropriate, are the organizational impediments pasted to the wall of the development director's office?"
+                    },
+                    {
+                        "label": "Is your organization one of the few with career paths compatible with the collective goals of your teams?"
+                    },
+                    {
+                        "label": "Are you helping to create a learning organization?"
+                    },
+                    {
+                        "label": "Has your organization been recognized by the trade press or other independent sources as one of the best places to work or a leader in your industry?"
+                    }
+                ]
+            }
+        ]
     }
 ]
