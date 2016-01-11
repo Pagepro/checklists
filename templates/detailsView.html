@@ -43,7 +43,7 @@
             <form class="form form--checklist" name="f">
                 <fieldset class="form__fieldset">
                     <div class="form__content">
-                        <div class="checklist-box" ng-repeat="list in currentChecklist.lists">
+                        <div class="checklist-box" ng-repeat="list in currentChecklist.lists" ng-init="listID = $index+1">
                             <div class="checklist-box__head">
                                 <h3 class="main-title">
                                     <span class="label">{{list.name}}</span>
@@ -51,20 +51,20 @@
                             </div>
                             <div class="checklist-box__content">
                                 <ul class="checklist">
-                                    <li class="checklist__item" ng-repeat="question in list.questions">
+                                    <li class="checklist__item" ng-repeat="question in list.questions" ng-init="questionID = 'list_'+listID+'-'+($index+1)">
                                         <div class="field field--checkbox">
                                             <div class="field__box field__box--checkbox">
                                                 <input class="input input--checkbox"
                                                        type="checkbox"
-                                                       name="{{question.id}}"
-                                                       id="{{question.id}}"
-                                                       ng-model="checkboxList[question.id]"
+                                                       name="{{questionID}}"
+                                                       id="{{questionID}}"
+                                                       ng-model="checkboxList[questionID]"
                                                        ng-change="changeTriggered()">
                                                 <div class="checkbox-holder"></div>
                                             </div>
                                             <div class="field__box field__box--label">
                                                 <label class="label"
-                                                       for="{{question.id}}"
+                                                       for="{{questionID}}"
                                                        ng-bind-html="question.label">
                                                 </label>
                                             </div>

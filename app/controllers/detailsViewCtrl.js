@@ -36,7 +36,7 @@ app.controller('detailsViewCtrl',[
                 $state.go('errorState');
                 return;
             }
-            // set new localstorage namespace for current list if do not exists
+            // set new localstorage namespace for current list if it does not exists
             if(!$window.localStorage[$scope.localStorageNamespace + $scope.currentChecklist.id]) {
                 $window.localStorage[$scope.localStorageNamespace + $scope.currentChecklist.id] = JSON.stringify({});
             }
