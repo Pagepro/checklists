@@ -8,27 +8,21 @@
                 "name": "Package with design and design related files",
                 "questions": [
                     {
-                        "id": "list-1_1",
                         "label": "HAVE YOU INCLUDED JPG FILES FOR ALL PAGES (HOME PAGE) AND ALL PAGE VARIANTS (HOME PAGE POPUP, FILTERS OPENED, MENU EXPANDED)?"
                     },
                     {
-                        "id": "list-1_2",
                         "label": "HAVE YOU INCLUDED JPG AND PSD FILES FOR DESKTOP, TABLET AND SMARTPHONE IF PROJECT REQUIRES TO DO RWD?"
                     },
                     {
-                        "id": "list-1_3",
                         "label": "HAVE YOU INCLUDED PSD FILES COVERING ALL THE PAGES AND PAGE VARIANTS INCLUDING RWD VERSION?"
                     },
                     {
-                        "id": "list-1_4",
                         "label": "DO YOU HAVE NAMING CONVENTION FOR PSD AND JPG (IF PAGE NAMED ABOUT YOU SHOULD NAME PSD “ABOUT_VOL-6.PSD”)?"
                     },
                     {
-                        "id": "list-1_5",
                         "label": "HAVE YOU INCLUDED ALL WEB FONTS IN ALL NEEDED FORMATS: .TTF, .EOT, .WOFF, .SVG, .OTF?"
                     },
                     {
-                        "id": "list-1_6",
                         "label": "HAVE YOU SENT THE LATEST VERSION OF THE FILES WITHOUT DUPLICATES OR OUTDATED VERSIONS?"
                     }
                 ]
@@ -37,35 +31,27 @@
                 "name": "PSD quality",
                 "questions": [
                     {
-                        "id": "list-2_1",
                         "label": "Are you naming your layers / folders properly (logo - hover instead of layer2)?"
                     },
                     {
-                        "id": "list-2_2",
                         "label": "Are you using and sticking to grid (unified columns, paddings and margins)?"
                     },
                     {
-                        "id": "list-2_3",
                         "label": "Have you removed all unused layers / folders?"
                     },
                     {
-                        "id": "list-2_4",
                         "label": "Are you grouping your layers (header, footer…)?"
                     },
                     {
-                        "id": "list-2_5",
                         "label": "Have you provided hover examples?"
                     },
                     {
-                        "id": "list-2_6",
                         "label": "Have you gotten rid of blending modes in your PSD?"
                     },
                     {
-                        "id": "list-2_7",
                         "label": "Have you sent files in good resolution and quality (with Retina support)?"
                     },
                     {
-                        "id": "list-2_8",
                         "label": "Are you familliar with <a href=\"http://photoshopetiquette.com\" target=\"_blank\">http://photoshopetiquette.com</a>?"
                     }
                 ]
@@ -81,43 +67,33 @@
                 "name": "Quality of code",
                 "questions": [
                     {
-                        "id": "list-3_1",
                         "label": "Does the site use a correct Doctype?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site use a Character set?"
                     },
                     {
-                        "id": "list-3_3",
                         "label": "Does the site use Valid HTML?"
                     },
                     {
-                        "id": "list-3_4",
                         "label": "Does the site use Valid CSS?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "Does the site use any CSS hacks?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "Does the site use unnecessary classes or ids?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "Is the code well structured?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "Does the site have any broken links?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "How does the site perform in terms of speed/page size?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "Does the site have JavaScript errors?"
                     }
                 ]
@@ -126,11 +102,9 @@
                 "name": "Degree of separation between content and presentation",
                 "questions": [
                     {
-                        "id": "list-3_1",
                         "label": "Does the site use CSS for all presentation aspects (fonts, colour, padding, borders etc)?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Are all decorative images in the CSS, or do they appear in the (X)HTML?"
                     }
                 ]
@@ -139,39 +113,30 @@
                 "name": "Accessibility for users",
                 "questions": [
                     {
-                        "id": "list-3_1",
                         "label": "Are “alt” attributes used for all descriptive images?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site use relative units rather than absolute units for text size?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site use visible skip menus?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site use accessible forms?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site use accessible tables?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Is there sufficient colour brightness/contrasts?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Is colour alone used for critical information?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Is there delayed responsiveness for dropdown menus (for users with reduced motor skills)?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Are all links descriptive (for blind users)?"
                     }
                 ]
@@ -180,35 +145,27 @@
                 "name": "Accessibility for devices",
                 "questions": [
                     {
-                        "id": "list-3_1",
                         "label": "Does the site work acceptably across modern and older browsers?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Is the content accessible with CSS switched off or not supported?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Is the content accessible with images switched off or not supported?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site work in text browsers such as Lynx?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site work well when printed?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site work well in Hand Held devices?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site include detailed metadata?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site work well in a range of browser window sizes?"
                     }
                 ]
@@ -217,43 +174,33 @@
                 "name": "Basic Usability",
                 "questions": [
                     {
-                        "id": "list-3_1",
                         "label": "Is there a clear visual hierarchy?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Are heading levels easy to distinguish?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Is the site’s navigation easy to understand?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Is the site’s navigation consistent?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site use consistent and appropriate language?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site have a sitemap page and contact page? Are they easy to find?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "For large sites, is there a search tool?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Is there a link to the home page on every page in the site?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Are links underlined?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Are visited links clearly defined?"
                     }
                 ]
@@ -262,19 +209,15 @@
                 "name": "Site management",
                 "questions": [
                     {
-                        "id": "list-3_1",
                         "label": "Does the site have a meaningful and helpful 404 error page that works from any depth in the site?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site use friendly URLs?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Do your URLs work without “www”?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the site have a favicon?"
                     }
                 ]
@@ -290,51 +233,39 @@
                 "name": "How is my Product Owner doing?",
                 "questions": [
                     {
-                        "id": "list-3_1",
                         "label": "Is the Product Backlog prioritized according to his/her latest thinking?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Are all the requirements and desirements from all stakeholders for the product captured in the backlog? "
                     },
                     {
-                        "id": "list-3_3",
                         "label": "Is the Product Backlog a manageable size?"
                     },
                     {
-                        "id": "list-3_4",
                         "label": "Could any requirements (especially those near the top of the Product Backlog) be better expressed as independent, negotiable, valuable, estimable, small, and testable user stories?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "Have you educated your Product Owner about technical debt and how to avoid it?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "Is the backlog an information radiator, clearly visible to all stakeholders?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "If you're using an automated tool for backlog management, is it actually working for you?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "Can you help radiate by showing everyone printouts?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "Can you help radiate by creating big visible charts?"
                     },
                     {
-                        "id": "list-3_5",
                         "label": "Have you helped your Product Owner organize backlog items into appropriate releases (e.g., front burner, back burner, fridge)?"
                     },
                     {
-                        "id": 2,
                         "label": "Do all stakeholders (including the team) know whether the release plan still matches reality, based on the current velocity (e.g., story points per Sprint)?"
                     },
                     {
-                        "id": 3,
                         "label": "Did your Product Owner adjust the release plan after the last Sprint Review Meeting?"
                     }
                 ]
@@ -343,59 +274,45 @@
                 "name": "How is my team doing?",
                 "questions": [
                     {
-                        "id": "list-3_1",
                         "label": "Are team members spending most of their time in the state of flow?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Do team members seem to like each other, goof off together, and celebrate each other's success?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Do team members hold each other accountable to high standards, and challenge each other to grow?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Are there issues/opportunities the team isn't discussing because they're too uncomfortable?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Have you tried a variety of formats and locations for Sprint Retrospective Meetings?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Has the team kept focus on acceptance criteria?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Does the Sprint Backlog reflect what the team is actually doing?"
                     },
                     {
-                        "id": 22,
                         "label": "Are your team's task estimates and/or your taskboard up to date?"
                     },
                     {
-                        "id": 22,
                         "label": "Are the team self-management artifacts (taskboard, Sprint Burndown Chart, etc.) visible to the team, convenient for the team to use?"
                     },
                     {
-                        "id": 22,
                         "label": "Are the team self-management artifacts adequately protected from micromanagers?"
                     },
                     {
-                        "id": 22,
                         "label": "Do team members volunteer for tasks?"
                     },
                     {
-                        "id": 22,
                         "label": "Are technical debt repayment items (to address issues sapping your team's velocity) captured in the backlog, or otherwise communicated with the Product Owner?"
                     },
                     {
-                        "id": 22,
                         "label": "Are team members leaving their job titles outside the team room?"
                     },
                     {
-                        "id": 22,
                         "label": "Does the entire team consider itself collectively responsible for testing, user documentation, etc.?"
                     }
                 ]
@@ -404,31 +321,24 @@
                 "name": "How is the organization doing?",
                 "questions": [
                     {
-                        "id": "list-3_1",
                         "label": "Is the appropriate amount of inter-team coordination happening?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Is the inter-team coordination done by the people with their hands dirty in the work, as recommended?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Are your ScrumMasters meeting with each other, working the organizational impediments list?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "When appropriate, are the organizational impediments pasted to the wall of the development director's office?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Is your organization one of the few with career paths compatible with the collective goals of your teams?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Are you helping to create a learning organization?"
                     },
                     {
-                        "id": "list-3_2",
                         "label": "Has your organization been recognized by the trade press or other independent sources as one of the best places to work or a leader in your industry?"
                     }
                 ]
