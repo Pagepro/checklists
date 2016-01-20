@@ -297,31 +297,24 @@
                         "label": "Does the Sprint Backlog reflect what the team is actually doing?"
                     },
                     {
-                        "id": 22,
                         "label": "Are your team's task estimates and/or your taskboard up to date?"
                     },
                     {
-                        "id": 22,
                         "label": "Are the team self-management artifacts (taskboard, Sprint Burndown Chart, etc.) visible to the team, convenient for the team to use?"
                     },
                     {
-                        "id": 22,
                         "label": "Are the team self-management artifacts adequately protected from micromanagers?"
                     },
                     {
-                        "id": 22,
                         "label": "Do team members volunteer for tasks?"
                     },
                     {
-                        "id": 22,
                         "label": "Are technical debt repayment items (to address issues sapping your team's velocity) captured in the backlog, or otherwise communicated with the Product Owner?"
                     },
                     {
-                        "id": 22,
                         "label": "Are team members leaving their job titles outside the team room?"
                     },
                     {
-                        "id": 22,
                         "label": "Does the entire team consider itself collectively responsible for testing, user documentation, etc.?"
                     }
                 ]
