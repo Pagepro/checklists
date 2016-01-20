@@ -263,11 +263,9 @@
                         "label": "Have you helped your Product Owner organize backlog items into appropriate releases (e.g., front burner, back burner, fridge)?"
                     },
                     {
-                        "id": 2,
                         "label": "Do all stakeholders (including the team) know whether the release plan still matches reality, based on the current velocity (e.g., story points per Sprint)?"
                     },
                     {
-                        "id": 3,
                         "label": "Did your Product Owner adjust the release plan after the last Sprint Review Meeting?"
                     }
                 ]
